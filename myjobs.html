@@ -1,10 +1,14 @@
 ﻿<!DOCTYPE html>
+<!-- Версия 2020-1 -->
+
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Портфолио</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script type="text/javascript">
+	
         ymaps.ready(init);
         var myMap, 
             myPlacemark;
@@ -83,6 +87,18 @@
             	hintContent: 'Всемирная Универсиада, СТК Снежный',
             	balloonContent: '<b>2018 год</b><br>Объект Всемирной Универсиады<br>Пуско-наладочные работы IP-АТС и сети DECT.'
             	});
+			uyar = new ymaps.Placemark([55.80724223, 94.32733742], {
+            	hintContent: 'ЖД АТС на станции Уяр',
+            	balloonContent: 'АТС AVAYA 8500 на 400 номеров<p>Пуско-наладочные работы<p>Участие в комиссии по приёмке в эксплуатацию'
+            	});		
+			ilansk = new ymaps.Placemark([56.24015707, 96.07202409], {
+            	hintContent: 'ЖД АТС на станции Иланская',
+            	balloonContent: 'АТС AVAYA 8700 на 3000 номеров<p>Восстановление работоспособности резервного управляющего вервера'
+            	});		
+			vladivostok = new ymaps.Placemark([43.13225270, 131.9198221], {
+            	hintContent: 'Колл-центр МФЦ "Мои документы"',
+            	balloonContent: 'Решение проблемы с пропаданием вызовов клиентов'
+            	});							
 			
 //Блок линий
 			var VOLS_KrSOP = new ymaps.Polyline([
@@ -171,6 +187,9 @@
 			myMap.geoObjects.add(Mira_154);
 			myMap.geoObjects.add(Cherno);
 			myMap.geoObjects.add(Universiada);
+			myMap.geoObjects.add(uyar);
+			myMap.geoObjects.add(ilansk);
+			myMap.geoObjects.add(vladivostok);
         }
     </script>
 </head>
