@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Города</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script type="text/javascript">
+        ymaps.ready(init);
+        var myMap, 
+            myPlacemark;
+
+        function init(){ 
+            myMap = new ymaps.Map("map", {
+                center: [56.01, 92.86],
+                zoom: 03
+            }); 
+            
+            myFirstPlacemark = new ymaps.Placemark([55.69, 37.54], {
+                hintContent: 'Москва!',
+                balloonContent: 'Несколько раз с 1995 по 2016.'
+            });
+            KRSK = new ymaps.Placemark([56.01, 92.84], {
+            	hintContent: 'Красноярск',
+            	balloonContent: 'Здесь могла быть Ваша реклама'
+            	});
+			Belgorod = new ymaps.Placemark([50.61, 36.61], {
+            	hintContent: 'Белгород',
+            	balloonContent: 'Сетевая школа 2007'
+            	});
+			Dzergin = new ymaps.Placemark([56.25, 43.47], {
+            	hintContent: 'Дзержинск',
+            	balloonContent: 'Сетевая школа 2006'
+            	});
+			essentuki = new ymaps.Placemark([44.05, 42.85], {
+            	hintContent: 'Ессентуки',
+            	balloonContent: 'Санаторий 2010'
+            	});          
+			elbrus = new ymaps.Placemark([43.34, 42.45], {
+            	hintContent: 'Эльбрус',
+            	balloonContent: 'Восхождение 2010'
+            	});       
+			Omsk = new ymaps.Placemark([54.96, 73.43], {
+            	hintContent: 'Омск',
+            	balloonContent: 'Учёба 1993-2001'
+            	});         
+			Berezka = new ymaps.Placemark([55.64, 36.33], {
+            	hintContent: 'ДО Берёзка',
+            	balloonContent: 'Сетеве школы 2007-2008'
+            	});         			
+			Nizniy = new ymaps.Placemark([56.29, 43.97], {
+            	hintContent: 'Нижний Новгород',
+            	balloonContent: 'Сетевая школа 2006'
+            	});			
+			Achinsk = new ymaps.Placemark([56.30, 90.52], {
+            	hintContent: 'Ачинск',
+            	balloonContent: 'Родной город'
+            	});			
+			Biysk = new ymaps.Placemark([52.52, 85.13], {
+            	hintContent: 'Бийск',
+            	balloonContent: 'Проездом на Алтай'
+            	});					
+			Mayma = new ymaps.Placemark([52.01, 85.89], {
+            	hintContent: 'Аэропорт Горно-Алтайск',
+            	balloonContent: 'Проездом на Алтай'
+            	});		
+			Lipetsk = new ymaps.Placemark([52.60, 39.60], {
+            	hintContent: 'Липецк',
+            	balloonContent: '1998'
+            	});			
+			Zadonsk = new ymaps.Placemark([52.39, 38.92], {
+            	hintContent: 'Задонск',
+            	balloonContent: '1998'
+            	});		
+			Nechaevka = new ymaps.Placemark([52.49, 38.97], {
+            	hintContent: 'Нечаевка',
+            	balloonContent: '1998'
+            	});		
+			Chemal = new ymaps.Placemark([51.41, 86.00], {
+            	hintContent: 'Чемал',
+            	balloonContent: '2001'
+            	});		
+			Globus = new ymaps.Placemark([51.90, 85.85], {
+            	hintContent: 'БО Глобус',
+            	balloonContent: '2005-2015'
+            	});		
+			Belokur = new ymaps.Placemark([51.99, 84.99], {
+            	hintContent: 'Белокуриха',
+            	balloonContent: '2001-2015'
+            	});		
+			Tomsk = new ymaps.Placemark([56.51, 84.99], {
+            	hintContent: 'Томск',
+            	balloonContent: 'Учёба 1990-1993'
+            	});					
+			Myski = new ymaps.Placemark([53.70, 87.82], {
+            	hintContent: 'Мыски',
+            	balloonContent: 'Родной город'
+            	});	
+			Angarsk = new ymaps.Placemark([52.56, 103.90], {
+            	hintContent: 'Ангарск',
+            	balloonContent: 'В гости к другу 1993'
+            	});	
+			Belovo = new ymaps.Placemark([54.42, 86.30], {
+            	hintContent: 'Белово',
+            	balloonContent: 'В гости к другу 1995'
+            	});	
+			NSK = new ymaps.Placemark([55.02, 82.95], {
+            	hintContent: 'Новосибирск',
+            	balloonContent: 'В разное время'
+            	});	
+			Mariinsk = new ymaps.Placemark([56.21, 87.75], {
+            	hintContent: 'Мариинск',
+            	balloonContent: 'В разное время'
+            	});	
+			Lesosibirsk = new ymaps.Placemark([58.23, 92.48], {
+            	hintContent: 'Лесосибирск',
+            	balloonContent: 'В разное время'
+            	});	
+			Surikovo = new ymaps.Placemark([56.985, 91.398], {
+            	hintContent: 'Суриково',
+            	balloonContent: 'В разное время'
+            	});	
+			Bogotol = new ymaps.Placemark([56.21, 89.54], {
+            	hintContent: 'Боготол',
+            	balloonContent: 'В разное время'
+            	});	
+			Uzhur = new ymaps.Placemark([55.30, 89.83], {
+            	hintContent: 'Ужур',
+            	balloonContent: '2007'
+            	});	
+			Dubinino = new ymaps.Placemark([55.62, 89.10], {
+            	hintContent: 'Дубинино',
+            	balloonContent: '2007'
+            	});	
+			KrSop = new ymaps.Placemark([55.70, 90.04], {
+            	hintContent: 'Красная Сопка',
+            	balloonContent: 'не помню'
+            	});	
+			Abakan = new ymaps.Placemark([53.71, 91.44], {
+            	hintContent: 'Абакан',
+            	balloonContent: 'В разное время'
+            	});
+			Askiz = new ymaps.Placemark([53.135, 90.417], {
+            	hintContent: 'Аскиз',
+            	balloonContent: '2013, 2017'
+            	});
+			Nazarovo = new ymaps.Placemark([56.001, 90.37], {
+            	hintContent: 'Назарово',
+            	balloonContent: 'В разное время'
+            	});
+			Plotbi = new ymaps.Placemark([56.042, 90.835], {
+            	hintContent: 'Деревня Плотбище',
+            	balloonContent: 'В разное время'
+            	});
+			Mezhdurechnsk = new ymaps.Placemark([53.68, 88.06], {
+            	hintContent: 'Междуреченск',
+            	balloonContent: 'В разное время'
+            	});
+			Novokuznetsk = new ymaps.Placemark([53.75, 87.115], {
+            	hintContent: 'Новокузнецк',
+            	balloonContent: 'В разное время'
+            	});
+			Divnogorsk = new ymaps.Placemark([55.96, 92.37], {
+            	hintContent: 'Дивногорск',
+            	balloonContent: 'Не помню'
+            	});
+			Tayga = new ymaps.Placemark([56.06, 85.65], {
+            	hintContent: 'Тайга',
+            	balloonContent: '1990-1993'
+            	});
+			Koshurnikovo = new ymaps.Placemark([54.30, 93.375], {
+            	hintContent: 'Кошурниково',
+            	balloonContent: 'В разное время'
+            	});
+			Kuragino = new ymaps.Placemark([53.893, 92.741], {
+            	hintContent: 'Курагино',
+            	balloonContent: '2017'
+            	});
+			Sayanskaya = new ymaps.Placemark([55.546, 94.715], {
+            	hintContent: 'Саянская',
+            	balloonContent: '1990'
+            	});
+			Uyar = new ymaps.Placemark([55.807, 94.326], {
+            	hintContent: 'Уяр',
+            	balloonContent: 'В разное время'
+            	});
+			SanatBerezka = new ymaps.Placemark([56.047, 94.793], {
+            	hintContent: 'Санаторий Берёзка',
+            	balloonContent: '1984'
+            	});
+			Kansk = new ymaps.Placemark([56.20, 95.705], {
+            	hintContent: 'Канск',
+            	balloonContent: 'Не помню'
+            	});
+			Ilansk = new ymaps.Placemark([56.24, 96.07], {
+            	hintContent: 'Иланский',
+            	balloonContent: 'В разное время'
+            	});
+			Reshoty = new ymaps.Placemark([56.157, 97.204], {
+            	hintContent: 'Решоты',
+            	balloonContent: 'В разное время'
+            	});
+			Chuazass = new ymaps.Placemark([53.518, 87.764], {
+            	hintContent: 'Покос Чуазасс',
+            	balloonContent: '1981-1990'
+            	});
+            myMap.geoObjects.add(myFirstPlacemark);
+            myMap.geoObjects.add(KRSK);
+			myMap.geoObjects.add(Belgorod);
+			myMap.geoObjects.add(Dzergin);
+			myMap.geoObjects.add(essentuki);
+			myMap.geoObjects.add(elbrus);
+			myMap.geoObjects.add(Omsk);
+			myMap.geoObjects.add(Berezka);
+			myMap.geoObjects.add(Nizniy);
+			myMap.geoObjects.add(Achinsk);
+			myMap.geoObjects.add(Biysk);
+			myMap.geoObjects.add(Mayma);
+			myMap.geoObjects.add(Lipetsk);
+			myMap.geoObjects.add(Zadonsk);
+			myMap.geoObjects.add(Nechaevka);
+			myMap.geoObjects.add(Chemal);
+			myMap.geoObjects.add(Globus);
+			myMap.geoObjects.add(Belokur);
+			myMap.geoObjects.add(Tomsk);
+			myMap.geoObjects.add(Myski);
+			myMap.geoObjects.add(Angarsk);
+			myMap.geoObjects.add(Belovo);
+			myMap.geoObjects.add(NSK);
+			myMap.geoObjects.add(Mariinsk);
+			myMap.geoObjects.add(Lesosibirsk);
+			myMap.geoObjects.add(Surikovo);
+			myMap.geoObjects.add(Bogotol);
+			myMap.geoObjects.add(Uzhur);
+			myMap.geoObjects.add(Dubinino);
+			myMap.geoObjects.add(KrSop);
+			myMap.geoObjects.add(Abakan);
+			myMap.geoObjects.add(Askiz);
+			myMap.geoObjects.add(Nazarovo);
+			myMap.geoObjects.add(Plotbi);			
+			myMap.geoObjects.add(Mezhdurechnsk);
+			myMap.geoObjects.add(Novokuznetsk);
+			myMap.geoObjects.add(Divnogorsk);
+			myMap.geoObjects.add(Tayga);
+			myMap.geoObjects.add(Koshurnikovo);
+			myMap.geoObjects.add(Kuragino);
+			myMap.geoObjects.add(Sayanskaya);
+			myMap.geoObjects.add(Uyar);
+			myMap.geoObjects.add(SanatBerezka);
+			myMap.geoObjects.add(Kansk);
+			myMap.geoObjects.add(Ilansk);
+			myMap.geoObjects.add(Reshoty);
+			myMap.geoObjects.add(Chuazass);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="map" style="width: 800px; height: 600px"></div>
+</body>
+
+</html>
