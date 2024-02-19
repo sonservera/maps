@@ -27,11 +27,11 @@
             myMap.balloon.open(coords, {
                 contentHeader:'Событие!',
                 contentBody:'<p>Кто-то щёлкнул по карте.</p>' +
-                    '<p>Координаты щелчка: ' + [
+                    '<p>Координаты щелчка:<br>' + [
                     coords[0].toPrecision(7),
                     coords[1].toPrecision(7)
                     ].join(', ') + '</p>',
-                contentFooter:'<sup>Щёлкните еще раз чтобы закрыть окно.</sup>'
+                contentFooter:'<sup>Щёлкните ещё раз вне сообщения чтобы закрыть окно.</sup>'
             });
         }
         else {
